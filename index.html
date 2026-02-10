@@ -4,14 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Be My Valentine 💖</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
-* {
-    box-sizing: border-box;
-}
-
 body {
     margin: 0;
     height: 100vh;
@@ -23,7 +17,6 @@ body {
     overflow: hidden;
 }
 
-/* Floating hearts container */
 #heartBox {
     position: fixed;
     inset: 0;
@@ -31,7 +24,6 @@ body {
     z-index: 1;
 }
 
-/* Card */
 .card {
     background: rgba(255,255,255,0.95);
     padding: 40px 25px;
@@ -57,7 +49,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Buttons */
 .btn-wrapper {
     display: flex;
     justify-content: center;
@@ -98,12 +89,12 @@ button {
     z-index: 999;
 }
 
-/* Floating hearts */
 .floating-heart {
     position: absolute;
     bottom: -10vh;
     animation: floatUp linear forwards;
     opacity: 0.8;
+    font-size: 20px;
 }
 
 @keyframes floatUp {
@@ -150,10 +141,8 @@ const heartBox = document.getElementById("heartBox");
 function dodge(e) {
     e.preventDefault();
     const btn = document.getElementById("noBtn");
-
     const maxX = window.innerWidth - btn.offsetWidth - 40;
     const maxY = window.innerHeight - btn.offsetHeight - 40;
-
     btn.style.left = Math.random() * maxX + "px";
     btn.style.top = Math.random() * maxY + "px";
 }
@@ -163,16 +152,14 @@ function createHeart() {
     heart.className = "floating-heart";
     heart.innerHTML = "❤️";
 
-    const size = Math.random() * 25 + 15;
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = size + "px";
-    heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+    heart.style.fontSize = (Math.random() * 25 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
 
     heartBox.appendChild(heart);
     setTimeout(() => heart.remove(), 7000);
 }
 
-// Continuous hearts
 setInterval(createHeart, 400);
 
 function celebrate() {
@@ -182,8 +169,6 @@ function celebrate() {
         <p style="font-weight:600;color:#444;">You made my heart so happy!</p>
         <p style="font-size:0.85rem;color:#ff4d6d;">Happy Valentine’s Day 💕</p>
     `;
-
-    // Heart explosion
     for (let i = 0; i < 30; i++) {
         setTimeout(createHeart, i * 100);
     }
