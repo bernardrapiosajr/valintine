@@ -3,7 +3,7 @@
 A fun, interactive, and mobile-responsive Valentine's Day card featuring a "No" button that dodges the user's touch and a celebratory surprise when "Yes" is clicked.
 
 ## 🚀 Live Demo
-Check it out here: [INSERT YOUR GITHUB PAGES LINK HERE]
+Check it out here: https://bernardrapiosajr.github.io/valentine/
 
 ## 📱 Mobile Fixes Applied
 If you were having trouble with the "No" button not working on phones, the following fixes have been implemented:
